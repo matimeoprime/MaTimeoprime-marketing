@@ -55,8 +55,8 @@
 
         <section class="page-section hero d-flex align-items-center text-white" id="home">
             <div class="container text-center" data-aos="fade-up">
-                <h1 class="font-weight-bold display-3 mb-5">
-                    <span class="text-primary">MaTimeo</span> Prime Marketing
+                <h1 class="font-weight-bold display-3 mb-5 hero-title">
+                    <span>MaTimeo</span> Prime Marketing
                 </h1>
             </div>
         </section>
@@ -112,7 +112,7 @@
         </section>
         <section class="page-section" id="services">
             <div class="container">
-                <div class="text-center"> 
+                <div class="text-center">  
                     <h2 class="section-title text-uppercase text-light">Service</h2>
                     <h3 class="text-white-50 mb-5">Specialized solutions in Branding, Printing, and Packaging to elevate your product.</h3>
                 </div>
@@ -199,7 +199,7 @@
         <section class="page-section" id="subsidiaries">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-title text-uppercase text-light">Our Specialized Subsidiaries</h2>
+                    <h2 class="section-title text-uppercase text-light">Subsidiaries</h2>
                     <h3 class="text-white-50 mb-5">Three pillars supporting our diverse market strategy and growth.</h3>
                 </div>
                 
@@ -209,7 +209,7 @@
                         <div class="card p-4 h-100 text-center shadow bg-dark border border-primary">
                             <i class="fas fa-utensils fa-4x mb-3 text-primary"></i>
                             <h4 class="card-title text-white font-weight-bold">MaTimeo Foods</h4>
-                            <p class="card-text text-white-50">Focuses on the production, packaging, and distribution of high-quality food products**, including our popular 'Own Brands' line like MaTimeo Chocolate. This subsidiary ensures strict quality control from raw material to final consumer good.</p>
+                            <p class="card-text text-white-50">Focuses on the **production, packaging, and distribution of high-quality food products**, including our popular 'Own Brands' line like MaTimeo Chocolate. This subsidiary ensures strict quality control from raw material to final consumer good.</p>
                         </div>
                     </div>
 
@@ -217,7 +217,7 @@
                         <div class="card p-4 h-100 text-center shadow bg-dark border border-primary">
                             <i class="fas fa-bullhorn fa-4x mb-3 text-primary"></i>
                             <h4 class="card-title text-white font-weight-bold">MaTimeo Marketing</h4>
-                            <p class="card-text text-white-50">A strategic partner handling brand promotion, market research, and sales growth strategies**. We deliver innovative marketing solutions to elevate both MaTimeo's brands and those of our clients.</p>
+                            <p class="card-text text-white-50">A strategic partner handling brand promotion, market research, and sales growth strategies. We deliver innovative marketing solutions to elevate both MaTimeo's brands and those of our clients.</p>
                         </div>
                     </div>
 
@@ -225,7 +225,7 @@
                         <div class="card p-4 h-100 text-center shadow bg-dark border border-primary">
                             <i class="fas fa-truck-moving fa-4x mb-3 text-primary"></i>
                             <h4 class="card-title text-white font-weight-bold">MaTimeo Distribution</h4>
-                            <p class="card-text text-white-50">Manages robust logistics, secure warehousing, and reliable product delivery services** across local and regional markets, guaranteeing efficient supply chain movement for all consumer goods.</p>
+                            <p class="card-text text-white-50">Manages robust logistics, secure warehousing, and reliable product delivery services across local and regional markets, guaranteeing efficient supply chain movement for all consumer goods.</p>
                         </div>
                     </div>
                     
@@ -250,20 +250,19 @@
                             <img class="img-fluid" src="images/11.jpg" alt="Gallery Item 11">
                         </a>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="0">
-                        <a class="gallery-item" href="images/2.jpg" data-toggle="lightbox" data-gallery="portfolioGallery" data-title="Customer Experience Focus">
-                            <img class="img-fluid" src="images/2.jpg" alt="Gallery Item 2">
+                    <div class="col-lg-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <a class="gallery-item" href="images/1.jpg" data-toggle="lightbox" data-gallery="portfolioGallery" data-title="Design and Strategy Review">
+                            <img class="img-fluid" src="images/1.jpg" alt="Gallery Item 1">
                         </a>
                     </div>
 
-                </div> 
+                </div>  
             </div>
         </section>
         <section class="page-section" id="contact">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-title text-uppercase text-light">Contact Us</h2>
-                    <h3 class="text-white-50 mb-5">Get in touch today!</h3>
                 </div>
                 <div class="row">
                     
@@ -311,7 +310,7 @@
                 
                 <div class="col-lg-12 text-center text-white-50">
                     <span class="d-block">© 2025 MaTimeo Prime Marketing. All Rights Reserved.</span>
-                      </div>
+                </div>
 
             </div>
         </div>
@@ -347,16 +346,17 @@
         border: 2px solid #FFCC00; /* Primary color border */
     }
 
-    /* Styles for the Hero section background image (MAKING SURE IMAGE 6 IS HERE) */
+    /* Styles for the Hero section background image (FIXED FILE PATH: images/6.jpg) */
     .hero {
         position: relative;
         background: url('images/6.jpg') no-repeat center center;
         background-size: cover;
+        background-attachment: fixed; 
         height: 100vh; /* Full viewport height */
         display: flex;
         align-items: center;
         justify-content: center;
-        color: white;
+        color: white; /* Setting base text color to white */
         text-align: center;
     }
 
@@ -377,14 +377,22 @@
         z-index: 2; /* Ensure text is above the overlay */
     }
     
+    /* NEW STYLE: Make the hero heading uniformly white and add a shadow for contrast */
+    .hero-title {
+        color: white !important; /* Make the entire h1 white */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a strong shadow */
+    }
+    .hero-title span {
+        color: white !important; /* Ensure the span is also white */
+    }
+
     /* General style adjustments */
     .page-section {
         padding: 8rem 0; 
     }
     .text-primary {
-        color: #FFCC00 !important; /* Your primary color */
+        color: #FFCC00 !important; /* Your primary color for other sections */
     }
     </style>
 </body>
 </html>
-
