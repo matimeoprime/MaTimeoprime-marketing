@@ -1,0 +1,215 @@
+/* Custom CSS for MaTimeo Prime Marketing */
+
+/* ---------------------------------------------------- */
+/* 1. Typography, Colors, and Custom Variables */
+/* ---------------------------------------------------- */
+
+:root {
+    --primary: #FFCC00; /* Custom Primary Color (Gold/Yellow) */
+    --dark: #212529;    /* Base Dark Background */
+    --light: #f8f9fa;   /* Base Light Background (used for contrast sections) */
+    
+    /* Fonts defined in HTML <head> */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+/* Ensure all body text is readable on the bg-dark body */
+body {
+    font-family: var(--font-body);
+    color: rgba(255, 255, 255, 0.85); 
+}
+
+/* Ensure headings use Montserrat (overriding Bootstrap) */
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: var(--font-heading) !important;
+}
+
+/* Ensure custom colors are applied */
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+
+/* ---------------------------------------------------- */
+/* 2. Layout and Sections */
+/* ---------------------------------------------------- */
+
+/* Standard vertical spacing for page sections */
+.page-section {
+    padding: 8rem 0; 
+}
+
+/* Spacing adjustment for the top section (below the fixed navbar) */
+#home {
+    padding-top: 10rem;
+}
+
+/* Styling for the Hero section background */
+.page-section.hero {
+    /* Assumes you have an image named 'hero.jpg' in an 'images' folder */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    min-height: 500px;
+    display: flex; 
+}
+
+/* Styling for sections that use the lighter background class */
+.page-section.bg-light {
+    color: var(--dark); /* Dark text on a light background */
+}
+
+/* Custom section titles for a bold, corporate look */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+/* ---------------------------------------------------- */
+/* 3. Navigation and Skip Link */
+/* ---------------------------------------------------- */
+
+/* Navbar link colors on a dark background */
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: var(--primary);
+}
+
+
+/* ---------------------------------------------------- */
+/* 4. Custom Utility and Card Elements */
+/* ---------------------------------------------------- */
+
+/* Styling for the fixed, transparent text watermark */
+.text-watermark {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 8vw;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.04); /* Very faint white */
+    pointer-events: none; /* Allows interaction to pass through */
+    z-index: -1;
+}
+
+/* Card Styling on light backgrounds (e.g., Subsidiaries, About V/M/V) */
+.card {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #fff;
+    color: #212529;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card i {
+    color: var(--primary) !important;
+}
+
+/* Gallery Hover Effect */
+.gallery-item {
+    display: block;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.gallery-item img {
+    transition: transform 0.5s ease;
+}
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+
+/* --- Floating Elements (Socials and Scroll Button) --- */
+
+#floating-elements {
+    position: fixed;
+    right: 20px; /* Distance from the right edge */
+    bottom: 20px; /* Distance from the bottom edge */
+    z-index: 1050; /* Ensure it stays above everything else (like modals) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Scroll Button Styling */
+.btn-scroll-top {
+    background-color: var(--primary); 
+    color: var(--dark);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    margin-top: 10px; /* Space above the button */
+}
+
+.btn-scroll-top:hover {
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+/* Floating Social Icons Styling */
+.social-icons {
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    gap: 10px; /* Space between icons */
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--dark); /* Dark background */
+    border: 1px solid var(--primary);
+    color: var(--primary); /* Primary color for the icon */
+    font-size: 1.25rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--primary); /* Hover: Primary background */
+    color: var(--dark); /* Hover: Dark icon */
+    transform: scale(1.1);
+}
+
+
+/* ---------------------------------------------------- */
+/* 5. Media Queries for Responsiveness */
+/* ---------------------------------------------------- */
+
+@media (max-width: 992px) {
+    .page-section {
+        padding: 6rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .text-watermark {
+        font-size: 12vw;
+    }
+}
