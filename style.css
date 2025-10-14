@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
  */
 .page-section.hero {
     /* 1. Set the correct image and properties for responsiveness */
-    background: url('images/6.jpg') no-repeat center center;
+    background: url('images/5.jpg') no-repeat center center;
     background-size: cover; /* CRUCIAL: Ensures image fills the screen */
     background-attachment: scroll; /* Use scroll for better mobile performance */
     
@@ -305,5 +305,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 #mainNav.navbar-shrink .navbar-brand img {
     height: 45px; /* Slightly reduced height when scrolled down */
 }
+
 
 
