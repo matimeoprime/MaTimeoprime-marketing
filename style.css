@@ -272,3 +272,38 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     }
 }
 
+/* ---------------------------------------------------- */
+/* 6. Logo Sizing Fix (Mobile and Desktop) */
+/* ---------------------------------------------------- */
+
+.navbar-brand img {
+    /* Base size: This will apply to desktop and tablet first */
+    height: 50px; 
+    transition: height 0.3s ease-in-out; 
+}
+
+/* * Desktop/Tablet Fix: Ensure a good size for larger screens 
+ * Bootstrap 'lg' breakpoint (>= 992px)
+ */
+@media (min-width: 992px) {
+    .navbar-brand img {
+        height: 60px; /* Larger logo for desktop view */
+    }
+}
+
+/* * Mobile Fix: Ensure the logo is smaller so it doesn't crowd the navbar 
+ * Bootstrap 'sm' breakpoint (<= 576px)
+ */
+@media (max-width: 576px) {
+    .navbar-brand img {
+        height: 40px !important; /* Smaller logo for compact mobile view */
+    }
+}
+
+
+/* Optional: If you use a sticky/scrolled down navbar */
+#mainNav.navbar-shrink .navbar-brand img {
+    height: 45px; /* Slightly reduced height when scrolled down */
+}
+
+
