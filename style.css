@@ -216,16 +216,40 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     border-radius: 50%;
     background-color: var(--dark); 
     border: 1px solid var(--primary);
-    color: var(--primary); 
+    color: var(--light); 
     font-size: 1.25rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
 
-.social-icon:hover {
-    background-color: var(--primary); 
+/* --- WhatsApp Green --- */
+.social-icon .fa-whatsapp {
+    color: #25D366; /* Official WhatsApp Green */
+}
+.social-icon .fa-whatsapp:hover {
+    background-color: #25D366;
+    color: white; 
+}
+
+/* --- Instagram/TikTok Colors (Keeping them stark white/dark for professionalism) --- */
+.social-icon .fa-instagram,
+.social-icon .fa-tiktok {
+    color: white;
+}
+.social-icon .fa-instagram:hover,
+.social-icon .fa-tiktok:hover {
+    /* Keeping the hover dark-on-primary for consistency, but you can change this */
+    background: var(--primary); 
     color: var(--dark); 
-    transform: scale(1.1);
+}
+/* If you want Instagram/TikTok to use their brand gradient/dark colors, you would use: */
+/* .social-icon:hover { transform: scale(1.1); } (and keep default colors) */
+
+
+/* General hover override for the default style */
+.social-icon:hover {
+    transform: scale(1.1);y
+    /* Ensure only the specific platform hover styles above apply */
 }
 
 
@@ -247,3 +271,4 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
         font-size: 12vw;
     }
 }
+
