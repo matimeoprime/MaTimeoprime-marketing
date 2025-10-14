@@ -7,7 +7,7 @@
 :root {
     --primary: #FFCC00; /* Custom Primary Color (Gold/Yellow) */
     --dark: #212529;    /* Base Dark Background */
-    --light: #f8f9fa;   /* Base Light Background (used for contrast sections) */
+    --light: #f8f9fa;   /* Base Light Background */
     
     /* Fonts defined in HTML <head> */
     --font-heading: 'Montserrat', sans-serif;
@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 
 /* ---------------------------------------------------- */
-/* 2. Layout and Sections */
+/* 2. Layout and Sections - REVISED HERO SECTION */
 /* ---------------------------------------------------- */
 
 /* Standard vertical spacing for page sections */
@@ -46,24 +46,51 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 /* Spacing adjustment for the top section (below the fixed navbar) */
 #home {
-    padding-top: 10rem;
+    padding-top: 0; /* Remove top padding since hero uses 100vh */
 }
 
-/* Styling for the Hero section background */
+/* * CRITICAL FIX: The Hero Section with 6.jpg and Overlay 
+ * This replaces the old conflicting .page-section.hero block
+ */
 .page-section.hero {
-    /* Assumes you have an image named 'hero.jpg' in an 'images' folder */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
+    /* 1. Set the correct image and properties for responsiveness */
+    background: url('images/6.jpg') no-repeat center center;
+    background-size: cover; /* CRUCIAL: Ensures image fills the screen */
+    background-attachment: scroll; /* Use scroll for better mobile performance */
+    
+    height: 100vh; /* Full viewport height */
     min-height: 500px;
-    display: flex; 
+    display: flex;
+    position: relative; 
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
 }
 
-/* Styling for sections that use the lighter background class */
-.page-section.bg-light {
-    color: var(--dark); /* Dark text on a light background */
+/* The Readability Fix: Dark Overlay */
+.page-section.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55); /* Black with 55% opacity */
+    z-index: 1; 
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2; /* Brings text above the overlay */
+}
+
+/* NEW: Style the Hero Headline for maximum impact and readability */
+.hero-title {
+    color: var(--primary) !important; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1) !important; /* Strong, dark shadow */
+    font-size: 3rem; 
+}
+.text-white-75 {
+    color: rgba(255, 255, 255, 0.85) !important;
 }
 
 /* Custom section titles for a bold, corporate look */
@@ -75,7 +102,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 }
 
 /* ---------------------------------------------------- */
-/* 3. Navigation and Skip Link */
+/* 3. Navigation and Skip Link (Unchanged) */
 /* ---------------------------------------------------- */
 
 /* Navbar link colors on a dark background */
@@ -90,7 +117,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 
 /* ---------------------------------------------------- */
-/* 4. Custom Utility and Card Elements */
+/* 4. Custom Utility and Card Elements (Adjusted Card Contrast) */
 /* ---------------------------------------------------- */
 
 /* Styling for the fixed, transparent text watermark */
@@ -102,24 +129,28 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     font-size: 8vw;
     font-weight: 800;
     color: rgba(255, 255, 255, 0.04); /* Very faint white */
-    pointer-events: none; /* Allows interaction to pass through */
+    pointer-events: none; 
     z-index: -1;
 }
 
-/* Card Styling on light backgrounds (e.g., Subsidiaries, About V/M/V) */
+/* Card Styling for dark background sections */
 .card {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background: #fff;
-    color: #212529;
+    border: 1px solid var(--primary); /* Use primary color border for definition */
+    background: var(--dark);
+    color: rgba(255, 255, 255, 0.85); /* Light text on dark card */
     transition: transform 0.3s;
 }
 
 .card:hover {
     transform: translateY(-5px);
+    border-color: var(--light); /* Subtle hover effect */
 }
 
 .card i {
     color: var(--primary) !important;
+}
+.card-text.text-white-50 {
+    color: rgba(255, 255, 255, 0.7) !important; /* Soften card body text */
 }
 
 /* Gallery Hover Effect */
@@ -141,11 +172,11 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 #floating-elements {
     position: fixed;
-    right: 20px; /* Distance from the right edge */
-    bottom: 20px; /* Distance from the bottom edge */
-    z-index: 1050; /* Ensure it stays above everything else (like modals) */
+    right: 20px; 
+    bottom: 20px; 
+    z-index: 1050; 
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     align-items: center;
 }
 
@@ -161,7 +192,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
-    margin-top: 10px; /* Space above the button */
+    margin-top: 10px; 
 }
 
 .btn-scroll-top:hover {
@@ -172,8 +203,8 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 /* Floating Social Icons Styling */
 .social-icons {
     display: flex;
-    flex-direction: column; /* Stack vertically */
-    gap: 10px; /* Space between icons */
+    flex-direction: column; 
+    gap: 10px; 
 }
 
 .social-icon {
@@ -183,17 +214,17 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-color: var(--dark); /* Dark background */
+    background-color: var(--dark); 
     border: 1px solid var(--primary);
-    color: var(--primary); /* Primary color for the icon */
+    color: var(--primary); 
     font-size: 1.25rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
 
 .social-icon:hover {
-    background-color: var(--primary); /* Hover: Primary background */
-    color: var(--dark); /* Hover: Dark icon */
+    background-color: var(--primary); 
+    color: var(--dark); 
     transform: scale(1.1);
 }
 
@@ -205,6 +236,9 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 @media (max-width: 992px) {
     .page-section {
         padding: 6rem 0;
+    }
+    .hero-title {
+        font-size: 2.5rem !important; /* Smaller on tablet/mobile */
     }
 }
 
